@@ -87,8 +87,8 @@ Check whether http redirect works properly:
 ### Clone the Repository
 1. If applicable, clone the repository to your local machine (or download the Helm charts and any other necessary files from the given source).
 
-### Navigate to the Helm Charts Directory
-2. Change into the directory where the Helm charts are located.
+### Connect to the cluster on Google Cloud Platform
+2. `gcloud container clusters get-credentials software-containerization-g18-cluster --zone europe-west4-a --project quixotic-market-412417`
 
 ### Install the Application Using Helm
 3. Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
@@ -118,3 +118,21 @@ mongodb: A MongoDB database server accessible on port `27017`.
 nodeapp: The Ice Cream Management Node.js application accessible on port `3000`.
 
 mongo-express: A Mongo Express web interface accessible on port `8081`, which provides a web-based MongoDB admin interface.
+
+### Container build and first deployment, scaling, uninstallation
+
+## Image build and Push
+1. **Clone the repository:**
+
+   If applicable, clone the repository to your local machine.
+
+2. **Navigate to the project directory:**
+
+   Change into the project directory where the `compose.yml` file is located.
+
+3. **Build image**
+` docker build -t zhuoran0219/ice-cream-management:1.0`
+
+3. **Push image**
+` docker push -t zhuoran0219/ice-cream-management:1.0`
+
