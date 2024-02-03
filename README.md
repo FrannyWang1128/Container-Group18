@@ -92,9 +92,9 @@ nodeapp: The Ice Cream Management Node.js application accessible on port `3000`.
 
 mongo-express: A Mongo Express web interface accessible on port `8081`, which provides a web-based MongoDB admin interface.
 
-### Container build and first deployment, scaling, uninstallation
+## Container build and first deployment, scaling, uninstallation
 
-## Image build and Push
+### Image build and Push
 
 1. **Clone the repository:**
 
@@ -112,19 +112,23 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
    
 ` docker push zhuoran0219/ice-cream-management:1.0`
 
-## Deploy application
+### Deploy application
 
-### Connect to the cluster on Google Cloud Platform
-1. Use Google Cloud SDK Shell to connect to the cluster we established
+
+1. **Connect to the cluster on Google Cloud Platform**
+   
+  Use Google Cloud SDK Shell to connect to the cluster we established
 
    `gcloud container clusters get-credentials software-containerization-g18-cluster --zone europe-west4-a --project quixotic-market-412417`
 
-### Install the Application Using Helm
-2. Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
+3. **Install the Application Using Helm**
+   
+   Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
 
    `helm install my-ice-cream-app [CHART_PATH]`
 
-### Check helm deployment status
-3. `helm list`
+4. **Check helm deployment status**
+
+ `helm list`
 
 
