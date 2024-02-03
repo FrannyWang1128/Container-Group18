@@ -1,11 +1,9 @@
 # Ice Cream Management System
 
 ## Introduction
-This is the project repository for the group assignment in the course Software Containerization at the Vrije Universiteit, Amsterdam for the academic year 2023-2024 by group 18. The goal of the assignment is to implement the Ice Cream Management System, a simple application to manage ice cream products, powered by a Node.js backend and MongoDB. This README provides instructions on how to set up and run the application.
-
+This is the project repository for the group assignment in the course Software Containerization at the Vrije Universiteit, Amsterdam for the academic year 2023-2024 by group 18. The goal of the assignment is to implement the Ice Cream Management System, a simple application to manage ice cream products, powered by a Node.js backend and MongoDB. This README provides instructions on how to set up, run, update, and delete the application.
 
 ## Prerequisites
-
 Before you begin, ensure that you have Docker installed on your system. 
 
 1. [Docker](https://www.docker.com/products/docker-desktop/) is used to create, deploy, and run applications by using containers. Docker Compose is required to manage the application with its services.
@@ -14,11 +12,27 @@ Before you begin, ensure that you have Docker installed on your system.
 
 3. [Helm](https://helm.sh/docs/intro/install/) installed: Helm is a package manager for Kubernetes that simplifies deploying and managing applications.
 
+4. [Google Cloud SDK Shell](https://cloud.google.com/sdk/docs/downloads) installed: Cloud SDK is a set of tools, including gcloud, gsutil, and bq command-line tools, client libraries & local emulators for developing with Google Cloud.
+
+### Load Balancer
+
+### Storage Class
+
+### Image Registry
+
+### Certificates
+
+### Roles
+
+### Network Policies
+
+
+
 ## Quick Start
 
 1. **Clone the repository:**
 
-   If applicable, clone the repository to your local machine (or download the `compose.yml` and any other necessary files from the given source).
+   If applicable, clone the repository to your local machine.
 
 2. **Navigate to the project directory:**
 
