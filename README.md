@@ -42,7 +42,7 @@ The images involved in our project reside on the docker hub. The information abo
 
 ### Certificates
 
-To enable TLS security for our application, we first created a self-signed cluster issuer using the cert-manager API of kubernetes in app-ca-issuer.yaml. Then, we use it to create a root certificate which will be stored in a secret file named ca-key-pair. After that, we are able to facilitate a privat CA app-tls-certificate.yaml using the root certificate to sign certificate for our application ingress. Finally, our ingress controller defined in ingress.yaml can refer to the private CA and get a certificate to enable TLS security. The certificate is stored in a secret file named my-my-app-tls.
+To enable TLS security for our application, we first created a self-signed cluster issuer using the cert-manager API of kubernetes in app-ca-issuer.yaml. Then, we use it to create a root certificate which will be stored in a secret file named ca-key-pair. After that, we are able to facilitate a privat CA app-tls-certificate.yaml using the root certificate to sign certificate for our application ingress. Finally, our ingress controller defined in ingress.yaml can refer to the private CA and get a certificate to enable TLS security. The certificate is stored in a secret file named my-app-tls.
 
 Check whether myicecreamapp is accessible via https:
 `https://www.myicecreamapp.com`
