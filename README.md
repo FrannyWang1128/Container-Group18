@@ -125,10 +125,10 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
    
       Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
 
-      `helm install my-ice-cream-app [CHART_PATH]`
+      ` helm install my-ice-cream-app [CHART_PATH] `
 
 4. **Check helm deployment status**
 
-       `helm list`
+       ` helm list `
 
 
