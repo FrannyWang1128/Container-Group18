@@ -55,33 +55,6 @@ Check whether http redirect works properly:
 ### Network Policies
 
 
-
-## Quick Start
-
-1. **Clone the repository:**
-
-   If applicable, clone the repository to your local machine.
-
-2. **Navigate to the project directory:**
-
-   Change into the project directory where the `compose.yml` file is located.
-
-3. **Start the services:**
-   Run the following command to start all services in the background:
-
-   ```docker-compose up -d```
-
-4. **Access the application:**
-   Once the services are up and running, you can access:
-
-   The Node.js application at: `http://localhost:3000`
-   Mongo Express web interface at: `http://localhost:8081`
-
-5. **Stopping the Services:**
-   To stop and remove all the running services, you can use the following command:
-
-   `docker-compose down`
-
 ## Quick Start with Helm on Google Cloud Platform
 
 ### Clone the Repository
@@ -122,6 +95,7 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
 ### Container build and first deployment, scaling, uninstallation
 
 ## Image build and Push
+
 1. **Clone the repository:**
 
    If applicable, clone the repository to your local machine.
@@ -130,9 +104,27 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
 
    Change into the project directory where the `compose.yml` file is located.
 
-3. **Build image**
+3. **Build icecream app image**
+   
 ` docker build -t zhuoran0219/ice-cream-management:1.0`
 
-3. **Push image**
-` docker push -t zhuoran0219/ice-cream-management:1.0`
+4. **Push icecream app image**
+   
+` docker push zhuoran0219/ice-cream-management:1.0`
+
+## Deploy application
+
+### Connect to the cluster on Google Cloud Platform
+1. Use Google Cloud SDK Shell to connect to the cluster we established
+
+   `gcloud container clusters get-credentials software-containerization-g18-cluster --zone europe-west4-a --project quixotic-market-412417`
+
+### Install the Application Using Helm
+2. Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
+
+   `helm install my-ice-cream-app [CHART_PATH]`
+
+### Check helm deployment status
+3. `helm list`
+
 
