@@ -129,6 +129,6 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
 
 4. **Check helm deployment status**
 
-       ` helm list `
+      `helm list`
 
 
