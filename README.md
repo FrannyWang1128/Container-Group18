@@ -98,37 +98,37 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
 
 1. **Clone the repository:**
 
-   If applicable, clone the repository to your local machine.
+      If applicable, clone the repository to your local machine.
 
 2. **Navigate to the project directory:**
 
-   Change into the project directory where the `compose.yml` file is located.
+      Change into the project directory where the `compose.yml` file is located.
 
 3. **Build icecream app image**
    
-` docker build -t zhuoran0219/ice-cream-management:1.0`
+      ` docker build -t zhuoran0219/ice-cream-management:1.0`
 
 4. **Push icecream app image**
    
-` docker push zhuoran0219/ice-cream-management:1.0`
+      ` docker push zhuoran0219/ice-cream-management:1.0`
 
 ### Deploy application
 
 
 1. **Connect to the cluster on Google Cloud Platform**
    
-  Use Google Cloud SDK Shell to connect to the cluster we established
+      Use Google Cloud SDK Shell to connect to the cluster we established
 
-   `gcloud container clusters get-credentials software-containerization-g18-cluster --zone europe-west4-a --project quixotic-market-412417`
+      `gcloud container clusters get-credentials software-containerization-g18-cluster --zone europe-west4-a --project quixotic-market-412417`
 
 3. **Install the Application Using Helm**
    
-   Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
+      Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
 
-   `helm install my-ice-cream-app [CHART_PATH]`
+      `helm install my-ice-cream-app [CHART_PATH]`
 
 4. **Check helm deployment status**
 
- `helm list`
+       `helm list`
 
 
