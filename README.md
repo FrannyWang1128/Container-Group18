@@ -55,43 +55,6 @@ Check whether http redirect works properly:
 ### Network Policies
 
 
-## Quick Start with Helm on Google Cloud Platform
-
-### Clone the Repository
-1. If applicable, clone the repository to your local machine (or download the Helm charts and any other necessary files from the given source).
-
-### Connect to the cluster on Google Cloud Platform
-2. `gcloud container clusters get-credentials software-containerization-g18-cluster --zone europe-west4-a --project quixotic-market-412417`
-
-### Install the Application Using Helm
-3. Run the following command to install the application using Helm in the default namespace (you can replace default namespace with the desired namespace):
-
-   `helm install my-ice-cream-app [CHART_PATH]`
-### Access the application
-4. Once the deployment is successful, you can access the application and the Mongo Express web interface using the following commands:
-
-   To access the Node.js application:
-   `minikube service nodeapp-service -n test-namespace`
-   
-   To access the Mongo Express web interface:
-   `minikube service mongo-express-service -n test-namespace`
-
-   These commands will open your default web browser and take you to the respective services.
-
-### Access the application
-5. If you want to remove the application from your cluster, you can run:
-   `helm uninstall my-ice-cream-app -n test-namespace`
-   This will uninstall the application and release the associated resources.
-
-# Services
-The system includes the following services:
-
-mongodb: A MongoDB database server accessible on port `27017`.
-
-nodeapp: The Ice Cream Management Node.js application accessible on port `3000`.
-
-mongo-express: A Mongo Express web interface accessible on port `8081`, which provides a web-based MongoDB admin interface.
-
 ## Container build and first deployment, scaling, uninstallation
 
 ### Image build and Push
@@ -131,4 +94,53 @@ mongo-express: A Mongo Express web interface accessible on port `8081`, which pr
 
       `helm list`
 
+### Horizontal Scale
 
+1. **Check pods before scaling:**
+   
+      `kubectl get pods`
+
+3. **Scale**
+   
+      `kubectl apply -f [HPA_PATH]\hpa.yaml`
+
+4. **Check pods after scaling:**
+
+      `kubectl get pods`
+
+### Uninstall deployment
+
+1. **Uninstall the Application Using Helm**
+   
+      `helm delete my-ice-cream-app`
+
+4. **Check helm deployment status**
+
+      `helm list`
+
+## Application upgrade and re-deployment
+
+1. **Display the names and images of pods running the app 'nodeapp'**
+
+      `kubectl get pods -l app=nodeapp -o custom-columns=NAME:.metadata.name,IMAGE:.spec.containers[*].image`
+   
+2. **Update the image of 'nodeapp-deployment' to a new version with tag 1.1:**
+
+      `kubectl set image deployment/nodeapp-deployment nodeapp=zhuoran0219/ice-cream-management:1.1`
+   
+3. **Check the rollout status of 'nodeapp-deployment' after updating to version 1.1:**
+
+      `kubectl rollout status deployment/nodeapp-deployment`
+   
+4. **Upgrade a Helm chart**
+   
+      `helm upgrade my-ice-cream-app ./mychart`
+   
+5. **Watch the real-time update status of pods:**
+   
+      `kubectl get pod -w`
+   
+6. **Delete a canary deployment**
+
+      `kubectl delete deployment nodeapp-canary`
+   
