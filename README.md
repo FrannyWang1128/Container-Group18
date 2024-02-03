@@ -12,7 +12,7 @@ Before you begin, ensure that you have Docker installed on your system.
 
 3. [Helm](https://helm.sh/docs/intro/install/) installed: Helm is a package manager for Kubernetes that simplifies deploying and managing applications.
 
-4. [Google Cloud SDK Shell](https://cloud.google.com/sdk/docs/downloads) installed: Cloud SDK is a set of tools, including gcloud, gsutil, and bq command-line tools, client libraries & local emulators for developing with Google Cloud.
+4. [Google Cloud SDK Shell](https://cloud.google.com/sdk/) installed: Cloud SDK is a set of tools, including gcloud, gsutil, and bq command-line tools, client libraries & local emulators for developing with Google Cloud.
 
 ### Load Balancer
 
